@@ -8,8 +8,28 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-       
-
+        .backGround{
+            width: 500px;
+            height: 700px;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+        .backGround .toDoList{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+           
+        }
+        .backGround .toDoList a{
+            color: white;
+            height: 100%;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .backGround .toDoList a:hover{
+            background: pink;
+        }
         .btn_modi{
             display: none;
             /* opacity: 0; */
@@ -18,8 +38,23 @@
         .inpWrap,.listView{
             width: 300px;margin: 0 auto;
         }
-        .inpWrap{background: skyblue;}
-        .listView{background: plum;}
+        .inpWrap{
+            height: 30px;
+            background: rgb(150, 50, 34);
+            opacity: 0.9;
+            border-radius: 3px;
+            
+            margin-bottom: 5px;  
+        }
+        /* .inpWrap .inp{
+            
+        } */
+       
+        .listView{
+            background: rgba(189, 58, 71, 0.951);
+            border-radius: 3px;
+            padding: 10px 10px;
+        }
         .listView ul li{
             display: flex;
             padding: 5px 0;
@@ -27,7 +62,7 @@
         .listView ul li .list{display: flex;align-items: center;padding-left: 10px;}
         .listView ul li .icon{
             margin-left: auto; /* 아이템이 두개일때 양옆으로 벌어짐 */
-            background: #000;
+            background: palevioletred;
             padding: 5px 10px;
             border-radius: 5px;
             font-size: 12px;
@@ -35,8 +70,8 @@
             gap: 10px;
         }
         .listView ul li .icon a{color: white;}
-
-        .item.done{background: rgba(0, 68, 255, 0.668);}
+        
+        .item.done{background: rgba(34, 96, 196, 0.743);}
     </style>
 
 </head>
@@ -45,16 +80,20 @@
     <i class="fa-sharp fa-solid fa-hammer"></i>
     <i class="fa-solid fa-square-check"></i> -->
 
-    <div class="inpWrap">
-        <input type="hidden" class="num">
-        <input type="text" class="inp">
-        <button class="btn_input">입력</button>
-        <button class="btn_modi">수정</button>
+    <div class="backGround" style="background-image: url(images/harry.gif)";>
+        <div class="toDoList"><a href="#">오늘의 할일👩‍💻💕</a></div>
+        <div class="inpWrap">
+            <input type="hidden" class="num">
+            <input type="text" class="inp">
+            <button class="btn_input">입력</button>
+            <button class="btn_modi">수정</button>
+        </div>
+        <div class="listView">
+            <ul></ul>
+            <button class="btnAllDel" onclick="listAllDel()">전체삭제</button>
+        </div>
     </div>
-    <div class="listView">
-        <ul></ul>
-        <button class="btnAllDel" onclick="listAllDel()">전체삭제</button>
-    </div>
+
     <script>
         let listData = [
            //{key,value}형태임
