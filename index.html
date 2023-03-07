@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .item.done{background: rgba(0, 68, 255, 0.668);}
+       
 
         .btn_modi{
             display: none;
@@ -36,6 +36,7 @@
         }
         .listView ul li .icon a{color: white;}
 
+        .item.done{background: rgba(0, 68, 255, 0.668);}
     </style>
 
 </head>
@@ -56,9 +57,8 @@
     </div>
     <script>
         let listData = [
-            {todo:"자바스크립트1",done:false},//{key,value}형태임
-            {todo:"자바스크립트2",done:false},
-            {todo:"자바스크립트3",done:false},
+           //{key,value}형태임
+           // {todo:"자바스크립트3",done:false},
         ]
 
         // listData[0].todo
@@ -77,8 +77,13 @@
             let value = {"todo":inpElem.value,"done":false}
 
             if(inpElem.value != ""){
-                listData.push(value)
-                viewData()
+                listData.push(value);
+
+                // localStorage insert
+                let valueData = JSON.stringify(listData)
+                localStorage.setItem("todoData",valueData)
+
+                viewData();
                 inpElem.value = ""
             }else{
                 alert("오늘의 할일을 입력하세요");
@@ -96,18 +101,27 @@
             inpElem.value = ""
             btnMoElem.style.display = "inline-block";
             btnIpElem.style.display = "none";
+
+            // localStorage  
+            // localStorage get
+            let valueData = JSON.stringify(listData)
+            localStorage.setItem("todoData",valueData)
             viewData()
         })
 
 
         function viewData(){
+            if(localStorage.length>0){
+                let localData = localStorage.getItem("todoData");
+                listData = JSON.parse(localData)
+            }
 
             let viewList = "";
             listData.forEach(function(item,index){
                 console.log(item.todo)
 
                 if(item.done == true){
-                    viewList += `<li class="item done">${item.todo}`
+                    viewList += `<li class="item done">${listData[index].todo}`
                 }else{
                     viewList += `<li class="item">${item.todo}`
                 }
@@ -138,6 +152,12 @@
 
         function itemDel(index){
             listData.splice(index,1)
+
+            // localStorage  
+            // localStorage  insert
+            let valueData = JSON.stringify(listData)
+            localStorage.setItem("todoData",valueData)
+
             viewData()
         }
 
@@ -149,6 +169,11 @@
             //     listData[index].done = true
             // }
             listData[index].done = !listData[index].done; //!는 not의 의미.위의 조건문과 같음
+            // localStorage  
+            // localStorage  insert 
+            let valueData = JSON.stringify(listData)
+            localStorage.setItem("todoData",valueData)
+
             viewData()
         }
         function modi(todo,index){
@@ -162,6 +187,11 @@
 
         function listAllDel(){
             listData=[];
+
+            // localStorage  
+            // localStorage  insert 
+            let valueData = JSON.stringify(listData)
+            localStorage.setItem("todoData",valueData)
             viewData();
         }
 
