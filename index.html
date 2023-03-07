@@ -99,8 +99,8 @@
             listData[numElem.value].done = false;
             //false값 안넣어줘도 차이가 없지?
             inpElem.value = ""
-            btnMoElem.style.display = "inline-block";
-            btnIpElem.style.display = "none";
+            btnMoElem.style.display = "none";
+            btnIpElem.style.display = "inline-block";
 
             // localStorage  
             // localStorage get
@@ -157,7 +157,8 @@
             // localStorage  insert
             let valueData = JSON.stringify(listData)
             localStorage.setItem("todoData",valueData)
-
+            btnMoElem.style.display = "none";
+            btnIpElem.style.display = "inline-block";
             viewData()
         }
 
@@ -192,6 +193,8 @@
             // localStorage  insert 
             let valueData = JSON.stringify(listData)
             localStorage.setItem("todoData",valueData)
+            btnMoElem.style.display = "none";
+            btnIpElem.style.display = "inline-block";
             viewData();
         }
 
