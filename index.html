@@ -48,8 +48,8 @@
             background: rgb(211, 169, 42);
             opacity: 0.9;
             border-radius: 3px;
-            
             margin-bottom: 5px;  
+        
         }
         /* .inpWrap .inp{
             
@@ -87,6 +87,7 @@
             border-radius: 3px;
             border: 0 none;
             font-size: 15px;
+            cursor: grab;
         }
         .btnAllDel:hover{
             background: pink;
@@ -108,7 +109,7 @@
             transition: 0.3s;
         }
         .good:hover{
-            transform: translate(100px)
+            transform: translate(100px);
         }
     </style>
 
@@ -122,7 +123,7 @@
         <div class="toDoList"><a href="#">오늘의 할일👩‍💻💕</a></div>
         <div class="inpWrap">
             <input type="hidden" class="num">
-            <input type="text" class="inp">
+            <input type="text" class="inp" placeholder="할일을 입력하세용😆">
             <button class="btn_input">입력</button>
             <button class="btn_modi">수정</button>
         </div>
@@ -164,7 +165,7 @@
                 viewData();
                 inpElem.value = ""
             }else{
-                alert("오늘의 할일을 입력하세요");
+                alert("오늘의 할일을 입력하세요😎");
                 inpElem.focus()
             }
              
@@ -204,9 +205,9 @@
                     viewList += `<li class="item">${item.todo}`
                 }
                 viewList += `<div class="icon">
-                            <a href="javascript:void(0)" onclick="itemDel(${index})"><i class="fa-solid fa-trash-can"></i></a>
-                            <a href="javascript:void(0)" onclick="modi('${item.todo}',${index})"><i class="fa-sharp fa-solid fa-hammer"></i></a>
                             <a href="javascript:void(0)" onclick="done(${index})"><i class="fa-solid fa-square-check"></i></a>
+                            <a href="javascript:void(0)" onclick="modi('${item.todo}',${index})"><i class="fa-sharp fa-solid fa-hammer"></i></a>
+                            <a href="javascript:void(0)" onclick="itemDel(${index})"><i class="fa-solid fa-trash-can"></i></a>
                             </div></li>`
             })
 
