@@ -80,6 +80,36 @@
         .listView ul li .icon a{color: white;}
         
         .item.done{background: rgba(34, 96, 196, 0.743);}
+        
+        .btnAllDel,.btn_input,.btn_modi{
+            background: rgba(31, 31, 146, 0.543);
+            color: white;
+            border-radius: 3px;
+            border: 0 none;
+            font-size: 15px;
+        }
+        .btnAllDel:hover{
+            background: pink;
+            color: navy;
+        }
+        .btn_input:hover{
+            background: rgb(72, 174, 174);
+            color: navy;
+        }
+        .btn_modi:hover{
+            background: rgb(72, 174, 174);
+            color: navy;
+        }
+        .good{
+            background: plum;
+            border: 0 none;
+            font-size: 15px;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+        .good:hover{
+            transform: translate(100px)
+        }
     </style>
 
 </head>
@@ -99,6 +129,7 @@
         <div class="listView">
             <ul></ul>
             <button class="btnAllDel" onclick="listAllDel()">전체삭제</button>
+            <button class="good">참 잘했어요👍</button>
         </div>
     </div>
 
