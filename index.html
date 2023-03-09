@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TODOLIST</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .backGround{
-            width: 500px;
-            height: 700px;
+            width: 600px;
+            height: 900px;
             margin: 0 auto;
             border-radius: 10px;
-            background-size: cover
+            background-size: cover;
         }
         .backGround .toDoList{
             display: flex;
@@ -24,12 +24,16 @@
         }
         .backGround .toDoList a{
             color: white;
+            font-size: 20px;
+            font-weight: 600;
             height: 100%;
             text-align: center;
             transition: 0.3s;
         }
         .backGround .toDoList a:hover{
             background: pink;
+            border-radius: 5px;
+            color: black;
         }
         .btn_modi{
             display: none;
@@ -52,12 +56,12 @@
         } */
        
         .listView{
-            background: white;
+            background-image: url(images/종이질감.jpg);
             border-radius: 3px;
             padding: 10px 10px;
         }
         .listView ul{
-            height: 400px;
+            height: 350px;
         }
         .listView ul li{
             display: flex;
@@ -84,7 +88,7 @@
     <i class="fa-sharp fa-solid fa-hammer"></i>
     <i class="fa-solid fa-square-check"></i> -->
 
-    <div class="backGround" style="background-image: url(images/토이스토리.jpg)";>
+    <div class="backGround" style="background-image: url(images/toystory.jpg)";>
         <div class="toDoList"><a href="#">오늘의 할일👩‍💻💕</a></div>
         <div class="inpWrap">
             <input type="hidden" class="num">
